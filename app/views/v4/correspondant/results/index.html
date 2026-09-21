@@ -1,0 +1,362 @@
+{% extends "/layouts/layout-sis.html" %}
+
+{% block pageTitle %}
+  Search – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        Correspondent search results
+      </h1>
+      
+
+       <p class="govuk-body">Your search:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Correspondent name: <strong>Lilly Grant</strong></li>
+        <li>Correspondent postcode: <strong>WG3 3PX</strong></li>
+        <li>Customer first names: <strong>Cristobal</strong></li>
+        <li>Customer last name: <strong>McKenzie</strong></li>
+        <li>Account number (customer or debt): <strong>812500021</strong></li>
+        <li>Individual debt balance: <strong>£222.03</strong></li>
+        <li>Customer account balance: <strong>£4000.71</strong></li>
+      </ul>
+
+      <p><a href="../search/index-2.html">Change search</a></p>
+
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-one-third">
+
+  <div class="moj-filter-layout">
+  <div class="moj-filter-layout__filter">
+    <div class="moj-filter" data-module="moj-filter">
+      <div class="moj-filter__header">
+        <div class="moj-filter__header-title">
+          <h2 class="govuk-heading-m">Filter</h2>
+        </div>
+        <div class="moj-filter__header-action">
+        </div>
+      </div>
+      <div class="moj-filter__content">
+          
+        <div class="moj-filter__options">
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Correspondent name
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Correspondent address
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Correspondent type
+            </label>
+            {{ xGovukAutocomplete({
+  id: "country",
+  name: "country",
+  allowEmpty: true,
+  label: {
+    classes: "govuk-label--l"
+  },
+  items: [
+    { text: "APPTEE" },
+    { text: "BANK" },
+    { text: "CBO" },
+    { text: "CDA" },
+    { text: "COP" },
+    { text: "DAP" },
+    { text: "EPA" },
+    { text: "EXEC1" },
+    { text: "EXEC2" },
+    { text: "EXEC3" },
+    { text: "EXEC4" },
+    { text: "LPA" },
+    { text: "NOK" },
+    { text: "OGP" },
+    { text: "PGU" },
+    { text: "REC" },
+    { text: "SFFP" },
+    { text: "SOL" }
+  ]
+}) }}
+          </div>
+
+           <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Customer NINO
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Account number
+            </label>
+            <!-- <div id="waste-hint" class="govuk-hint">
+                Filter by customer or debt account number
+            </div> -->
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+           <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Debt type
+            </label>
+            {{ xGovukAutocomplete({
+  id: "country",
+  name: "country",
+  allowEmpty: true,
+  label: {
+    classes: "govuk-label--l"
+  },
+  items: [
+    { text: "ADPEN" },
+    { text: "ACDS" },
+    { text: "AA" },
+    { text: "BALLCE" },
+    { text: "BB" },
+    { text: "BSP" },
+    { text: "STACA" },
+    { text: "CA" },
+    { text: "XBC" },
+    { text: "XBNC" },
+    { text: "CIVPEN" },
+    { text: "CIVPI" },
+    { text: "CIVPJ" },
+    { text: "CIVPS" },
+    { text: "COLPS" },
+    { text: "COLP" },
+    { text: "COLPJ" },
+    { text: "COLPD" },
+    { text: "DLA" },
+    { text: "DLAC" },
+    { text: "DLAM" },
+    { text: "DWA" },
+    { text: "ESAC" },
+    { text: "ESAIR" },
+    { text: "ESANS" },
+    { text: "STAESC" },
+    { text: "STAESI" },
+    { text: "ESDA" },
+
+    { text: "FC" },
+    { text: "HBPOST" },
+    { text: "HBPR88" },
+    { text: "IB" },
+    { text: "IS" },
+    { text: "IDB" },
+    { text: "IIDTHB" },
+    { text: "IIB" },
+    { text: "IIDB" },
+    { text: "ILS" },
+    { text: "IVB" },
+    { text: "STAIS" },
+    { text: "JSAC" },
+    { text: "JSAIB" },
+    { text: "JSANS" },
+
+    { text: "STAJSI" },
+    { text: "STAJSC" },
+    { text: "HBPR88" },
+    { text: "MA" },
+    { text: "MSFCL" },
+    { text: "MOBA" },
+    { text: "STANRP" },
+    { text: "STAPC" },
+    { text: "PC" },
+    { text: "PIPM" },
+    { text: "PIPDL" },
+    { text: "PIPDLM" },
+    { text: "REA" },
+    { text: "RA" },
+    { text: "RPCONT" },
+    { text: "SDA" },
+
+    { text: "SFMGOP" },
+    { text: "SFSSMG" },
+    { text: "SFSSOP" },
+    { text: "SB" },
+    { text: "SFCWOP" },
+    { text: "SFNIOP" },
+    { text: "SFBL" },
+    { text: "SFCCG" },
+    { text: "SFCGOP" },
+    { text: "SFCL" },
+    { text: "SFCLOP" },
+    { text: "SFFPOP" },
+    { text: "SFLOAN" },
+    { text: "SFMPOP" },
+    { text: "MSFBL" },
+
+    { text: "SFBLOP" },
+    { text: "STASP" },
+    { text: "STAIB" },
+    { text: "SUPB" },
+    { text: "TCOP" },
+    { text: "UCBA" },
+    { text: "UCBAS" },
+    { text: "UCRHP" },
+    { text: "UCRHPS" },
+    { text: "UCTBA" },
+    { text: "UCTBAS" },
+    { text: "UCNCAS" },
+    { text: "UCCCA" },
+    { text: "UCCCAS" },
+    { text: "UCNCA" },
+
+    { text: "UB" },
+    { text: "UCOP" },
+    { text: "UCOPI" },
+    { text: "UCOPW" },
+    { text: "UCOPS" },
+    { text: "UCBAJ" },
+    { text: "UCNCAJ" },
+    { text: "UCOPJ" },
+    { text: "UCRHPJ" },
+    { text: "UCTBAJ" },
+    { text: "WB" },
+    { text: "WMA" },
+    { text: "WPA" },
+    { text: "WP" },
+    { text: "WFP" }
+  ]
+}) }}
+          </div>
+           
+          <br>
+           
+          <br>
+
+          
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Apply filters
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+ </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+       <p><strong>1 customer record</strong></p>
+        
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Lilly Grant
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Correspondent type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          DAP
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          87 Dasia Avenue, Dyfed, Wales, WG3 3PX
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          ex-Correspondent for
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Cristobal McKenzie
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Customer NINO
+        </dt>
+        <dd class="govuk-summary-list__value">
+          QQ 12 34 56 C
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Customer account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          812500021
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Customer account balance
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £4000.71
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Debt account information
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>23805725 £222.03 (Adult Disability)</li>
+            <li>15353758 £1800.23 (Winter Fuel Payments)</li>
+            <li>24343444 £1978.45 (Carer)</li>
+        </ul>
+      </div>
+    </dl>
+  </div>
+</div>
+ 
+    </dl>
+  </div>
+</div>
+
+    </div>
+
+  </div>
+
+{% endblock %}

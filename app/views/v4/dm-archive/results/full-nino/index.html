@@ -1,0 +1,473 @@
+{% extends "/layouts/layout-sis.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% block pageTitle %}
+  Theresa Morris – Suspense investigation – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+ <h1 class="govuk-heading-l">
+        Theresa Morris
+      </h1>
+
+    <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      NINO
+    </dt>
+    <dd class="govuk-summary-list__value">
+      QQ 12 34 56 C
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      77 Windmill Hill
+      <br>
+      Enfield
+      <br>
+      Middlesex
+      <br>
+      EN2 7AF
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      24 Aug 1979
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of death
+    </dt>
+    <dd class="govuk-summary-list__value">
+      03 May 2026
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Partner's NINO
+    </dt>
+    <dd class="govuk-summary-list__value">
+      QQ 12 34 56 C
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Customer account number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p>812500021</p>
+      
+      <p><a href="../../results/full-nino/transactions/vra.html">View customer transactions</a></p>
+      
+      <p><a href="../../results/full-nino/diary/vra.html">View customer diary</a></p>
+    </dd>
+  </div>
+</dl>
+</div>
+</div>
+
+<br>
+
+<h2 class="govuk-heading-m">
+        Customer debt accounts
+      </h2>
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+<div class="moj-filter-layout">
+  <div class="moj-filter-layout__filter">
+    <div class="moj-filter" data-module="moj-filter">
+      <div class="moj-filter__header">
+        <div class="moj-filter__header-title">
+          <h2 class="govuk-heading-m">Filter</h2>
+        </div>
+        <div class="moj-filter__header-action">
+        </div>
+      </div>
+      <div class="moj-filter__content">
+          
+        <div class="moj-filter__options">
+          
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Debt account number
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Debt type
+            </label>
+            {{ xGovukAutocomplete({
+  id: "country",
+  name: "country",
+  allowEmpty: true,
+  label: {
+    classes: "govuk-label--l"
+  },
+  items: [
+    { text: "ADPEN" },
+    { text: "ACDS" },
+    { text: "AA" },
+    { text: "BALLCE" },
+    { text: "BB" },
+    { text: "BSP" },
+    { text: "STACA" },
+    { text: "CA" },
+    { text: "XBC" },
+    { text: "XBNC" },
+    { text: "CIVPEN" },
+    { text: "CIVPI" },
+    { text: "CIVPJ" },
+    { text: "CIVPS" },
+    { text: "COLPS" },
+    { text: "COLP" },
+    { text: "COLPJ" },
+    { text: "COLPD" },
+    { text: "DLA" },
+    { text: "DLAC" },
+    { text: "DLAM" },
+    { text: "DWA" },
+    { text: "ESAC" },
+    { text: "ESAIR" },
+    { text: "ESANS" },
+    { text: "STAESC" },
+    { text: "STAESI" },
+    { text: "ESDA" },
+
+    { text: "FC" },
+    { text: "HBPOST" },
+    { text: "HBPR88" },
+    { text: "IB" },
+    { text: "IS" },
+    { text: "IDB" },
+    { text: "IIDTHB" },
+    { text: "IIB" },
+    { text: "IIDB" },
+    { text: "ILS" },
+    { text: "IVB" },
+    { text: "STAIS" },
+    { text: "JSAC" },
+    { text: "JSAIB" },
+    { text: "JSANS" },
+
+    { text: "STAJSI" },
+    { text: "STAJSC" },
+    { text: "HBPR88" },
+    { text: "MA" },
+    { text: "MSFCL" },
+    { text: "MOBA" },
+    { text: "STANRP" },
+    { text: "STAPC" },
+    { text: "PC" },
+    { text: "PIPM" },
+    { text: "PIPDL" },
+    { text: "PIPDLM" },
+    { text: "REA" },
+    { text: "RA" },
+    { text: "RPCONT" },
+    { text: "SDA" },
+
+    { text: "SFMGOP" },
+    { text: "SFSSMG" },
+    { text: "SFSSOP" },
+    { text: "SB" },
+    { text: "SFCWOP" },
+    { text: "SFNIOP" },
+    { text: "SFBL" },
+    { text: "SFCCG" },
+    { text: "SFCGOP" },
+    { text: "SFCL" },
+    { text: "SFCLOP" },
+    { text: "SFFPOP" },
+    { text: "SFLOAN" },
+    { text: "SFMPOP" },
+    { text: "MSFBL" },
+
+    { text: "SFBLOP" },
+    { text: "STASP" },
+    { text: "STAIB" },
+    { text: "SUPB" },
+    { text: "TCOP" },
+    { text: "UCBA" },
+    { text: "UCBAS" },
+    { text: "UCRHP" },
+    { text: "UCRHPS" },
+    { text: "UCTBA" },
+    { text: "UCTBAS" },
+    { text: "UCNCAS" },
+    { text: "UCCCA" },
+    { text: "UCCCAS" },
+    { text: "UCNCA" },
+
+    { text: "UB" },
+    { text: "UCOP" },
+    { text: "UCOPI" },
+    { text: "UCOPW" },
+    { text: "UCOPS" },
+    { text: "UCBAJ" },
+    { text: "UCNCAJ" },
+    { text: "UCOPJ" },
+    { text: "UCRHPJ" },
+    { text: "UCTBAJ" },
+    { text: "WB" },
+    { text: "WMA" },
+    { text: "WPA" },
+    { text: "WP" },
+    { text: "WFP" }
+  ]
+}) }}
+          </div>
+
+           <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Overpayment amount
+            </label>
+<div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-10" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+  </div>          </div>
+         
+          <br>
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Apply filters
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+ </div>
+      
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-grid-row">
+  <!-- <div class="govuk-grid-column-one-half">
+      <p><strong>4 customer records</strong></p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
+   <div class="govuk-grid-column-one-half">
+      <p><strong>4 customer records</strong></p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
+</div> -->
+
+<p><strong>4 debt records</strong></p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      12345678967
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="./transactions/index.html">View transactions<span class="govuk-visually-hidden">RPCONT</span></a>
+      </li>
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="./diary/index.html">View diary<span class="govuk-visually-hidden">RPCONT</span></a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Debt type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Retirement pension: Contribution (RPCONT)
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          05 Mar 2026
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          300
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction value
+        </dt>
+        <dd class="govuk-summary-list__value">
+          - £1,356.43
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Overpayment amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £1,356.43
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      4280206908
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">View transactions<span class="govuk-visually-hidden">DLAC</span></a>
+      </li>
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">View diary<span class="govuk-visually-hidden">DLAC</span></a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Debt type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Disability Living Allowance:Care Compnt (DLAC)
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          06 Nov 2020
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          901
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction value
+        </dt>
+        <dd class="govuk-summary-list__value">
+          - £356.43
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Overpayment amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £356.43
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      42802045678
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">View transactions<span class="govuk-visually-hidden">IIDB</span></a>
+      </li>
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="#">View diary<span class="govuk-visually-hidden">IIDB</span></a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Debt type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Industrial Injuries Disablement Benefit (IIDB)
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          16 Nov 2002
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          900
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Final transaction value
+        </dt>
+        <dd class="govuk-summary-list__value">
+          - £2,305.13
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Overpayment amount
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £2,305.13
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

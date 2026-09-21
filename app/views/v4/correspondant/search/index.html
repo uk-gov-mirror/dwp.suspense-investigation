@@ -1,0 +1,111 @@
+{% extends "/layouts/layout-sis.html" %}
+
+{% block pageTitle %}
+  Customer search – Suspense investigation – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        Correspondent search
+      </h1>
+
+    <h2 class="govuk-heading-m">Correspondent details</h2>
+
+    <div class="govuk-form-group">
+    <label class="govuk-label" for="one-half">
+        Name
+    </label>
+    <input class="govuk-input govuk-!-width-one-half" id="one-half" name="oneHalf" type="text">
+    </div>
+
+     <div class="govuk-form-group">
+    <label class="govuk-label" for="one-half">
+        Postcode
+    </label>
+    <input class="govuk-input govuk-!-width-one-quarter" id="one-half" name="oneHalf" type="text">
+    </div>
+
+
+    <h2 class="govuk-heading-m">Customer details</h2>
+
+     <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+            <div class="govuk-form-group">
+            <label class="govuk-label" for="one-half">
+                First names
+            </label>
+            <input class="govuk-input govuk-!-width-full" id="one-half" name="oneHalf" type="text">
+            </div>
+        </div>
+        <div class="govuk-grid-column-one-half">
+            <div class="govuk-form-group">
+            <label class="govuk-label" for="one-half">
+                Last name
+            </label>
+            <input class="govuk-input govuk-!-width-full" id="one-half" name="oneHalf" type="text">
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+     <div class="govuk-form-group">
+            <label class="govuk-label" for="passport-number">
+              Account number
+            </label>
+            <div id="waste-hint" class="govuk-hint">
+                Search for customer or debt account number
+            </div>
+            <input class="govuk-input govuk-!-width-one-quarter" id="one-half" name="oneHalf" type="text">
+      </div>
+
+   <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+     <div class="govuk-form-group">
+    <label class="govuk-label" for="one-half">
+        Individual debt balance
+    </label>
+    <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-one-half" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+    </div>
+    </div>
+    
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-form-group">
+    <label class="govuk-label" for="one-half">
+        Customer account balance
+    </label>
+    <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-one-half" id="currency" name="currency" type="text" spellcheck="false" aria-describedby="currency-hint">
+    </div>
+    </div>
+  </div>
+  </div>
+
+
+    <a href="../results/index.html">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+        Search
+    </button>
+    </a>
+</div>
+
+    
+
+</div>
+
+{% endblock %}

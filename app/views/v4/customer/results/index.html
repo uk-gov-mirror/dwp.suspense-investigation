@@ -1,0 +1,456 @@
+{% extends "/layouts/layout-sis-menu.html" %}
+
+{% block pageTitle %}
+  Customer search results – Suspense investigation – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        Customer search results
+      </h1>
+
+      <p class="govuk-body">Your search:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Employer name: <strong>Stanley LTD</strong></li>
+        <li>Employee staff reference: <strong>98428392</strong></li>
+        <li>Customer first names: <strong>James Paul</strong></li>
+        <li>Customer last name: <strong>Smith</strong></li>
+        <li>Customer postcode: <strong>GU6 3ZH</strong></li>
+        <li>Customer NINO: <strong>AB000017A</strong></li>
+        <li>Account number (customer or debt): <strong>23805725</strong></li>
+        <li>Individual debt balance: <strong>£4000.00</strong></li>
+        <li>Customer account balance: <strong>£1800.00</strong></li>
+      </ul>
+
+      <p><a href="../search/index">Change search</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+<div class="moj-filter-layout">
+  <div class="moj-filter-layout__filter">
+    <div class="moj-filter" data-module="moj-filter">
+      <div class="moj-filter__header">
+        <div class="moj-filter__header-title">
+          <h2 class="govuk-heading-m">Filter</h2>
+        </div>
+        <div class="moj-filter__header-action">
+        </div>
+      </div>
+      <div class="moj-filter__content">
+          
+        <div class="moj-filter__options">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Employer name
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+           <hr>
+
+           <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Employer postcode
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              First names
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Last name
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              NINO
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Account number
+            </label>
+            <!-- <div id="waste-hint" class="govuk-hint">
+                Filter by customer or debt account number
+            </div> -->
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Customer address
+            </label>
+            <input class="govuk-input" id="keywords" name="keywords" type="text">
+          </div>
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Journey type
+            </label>
+            {{ xGovukAutocomplete({
+  id: "country",
+  name: "country",
+  allowEmpty: true,
+  label: {
+    classes: "govuk-label--l"
+  },
+  items: [
+    { text: "ACC" },
+    { text: "DCD" },
+    { text: "DEA" },
+    { text: "DEN" },
+    { text: "DPD" },
+    { text: "EI" },
+    { text: "ENF" },
+    { text: "ETP" },
+    { text: "EXT" },
+    { text: "INI" },
+    { text: "INV" },
+    { text: "OBR" },
+    { text: "OTP" },
+    { text: "PKV" },
+    { text: "PRE" },
+    { text: "RPV" },
+    { text: "RF1" },
+    { text: "RF2" },
+    { text: "RFD" },
+    { text: "SOE" },
+    { text: "STP" },
+    { text: "SUS" },
+    { text: "WOF" },
+    { text: "WVI" },
+    { text: "WVV" },
+    { text: "XBR" },
+    { text: "XTP" }
+  ]
+}) }}
+          </div>          
+
+          <hr>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Debt type
+            </label>
+            {{ xGovukAutocomplete({
+  id: "country",
+  name: "country",
+  allowEmpty: true,
+  label: {
+    classes: "govuk-label--l"
+  },
+  items: [
+    { text: "ADPEN" },
+    { text: "ACDS" },
+    { text: "AA" },
+    { text: "BALLCE" },
+    { text: "BB" },
+    { text: "BSP" },
+    { text: "STACA" },
+    { text: "CA" },
+    { text: "XBC" },
+    { text: "XBNC" },
+    { text: "CIVPEN" },
+    { text: "CIVPI" },
+    { text: "CIVPJ" },
+    { text: "CIVPS" },
+    { text: "COLPS" },
+    { text: "COLP" },
+    { text: "COLPJ" },
+    { text: "COLPD" },
+    { text: "DLA" },
+    { text: "DLAC" },
+    { text: "DLAM" },
+    { text: "DWA" },
+    { text: "ESAC" },
+    { text: "ESAIR" },
+    { text: "ESANS" },
+    { text: "STAESC" },
+    { text: "STAESI" },
+    { text: "ESDA" },
+
+    { text: "FC" },
+    { text: "HBPOST" },
+    { text: "HBPR88" },
+    { text: "IB" },
+    { text: "IS" },
+    { text: "IDB" },
+    { text: "IIDTHB" },
+    { text: "IIB" },
+    { text: "IIDB" },
+    { text: "ILS" },
+    { text: "IVB" },
+    { text: "STAIS" },
+    { text: "JSAC" },
+    { text: "JSAIB" },
+    { text: "JSANS" },
+
+    { text: "STAJSI" },
+    { text: "STAJSC" },
+    { text: "HBPR88" },
+    { text: "MA" },
+    { text: "MSFCL" },
+    { text: "MOBA" },
+    { text: "STANRP" },
+    { text: "STAPC" },
+    { text: "PC" },
+    { text: "PIPM" },
+    { text: "PIPDL" },
+    { text: "PIPDLM" },
+    { text: "REA" },
+    { text: "RA" },
+    { text: "RPCONT" },
+    { text: "SDA" },
+
+    { text: "SFMGOP" },
+    { text: "SFSSMG" },
+    { text: "SFSSOP" },
+    { text: "SB" },
+    { text: "SFCWOP" },
+    { text: "SFNIOP" },
+    { text: "SFBL" },
+    { text: "SFCCG" },
+    { text: "SFCGOP" },
+    { text: "SFCL" },
+    { text: "SFCLOP" },
+    { text: "SFFPOP" },
+    { text: "SFLOAN" },
+    { text: "SFMPOP" },
+    { text: "MSFBL" },
+
+    { text: "SFBLOP" },
+    { text: "STASP" },
+    { text: "STAIB" },
+    { text: "SUPB" },
+    { text: "TCOP" },
+    { text: "UCBA" },
+    { text: "UCBAS" },
+    { text: "UCRHP" },
+    { text: "UCRHPS" },
+    { text: "UCTBA" },
+    { text: "UCTBAS" },
+    { text: "UCNCAS" },
+    { text: "UCCCA" },
+    { text: "UCCCAS" },
+    { text: "UCNCA" },
+
+    { text: "UB" },
+    { text: "UCOP" },
+    { text: "UCOPI" },
+    { text: "UCOPW" },
+    { text: "UCOPS" },
+    { text: "UCBAJ" },
+    { text: "UCNCAJ" },
+    { text: "UCOPJ" },
+    { text: "UCRHPJ" },
+    { text: "UCTBAJ" },
+    { text: "WB" },
+    { text: "WMA" },
+    { text: "WPA" },
+    { text: "WP" },
+    { text: "WFP" }
+  ]
+}) }}
+          </div>
+          
+          <!-- <hr>
+
+           <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="keywords">
+              Debt account information
+            </label>
+            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month" checked>
+              <label class="govuk-label govuk-radios__label" for="changedName">
+                Include
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+              <label class="govuk-label govuk-radios__label" for="changedName-2">
+                Exclude
+              </label>
+            </div>
+          </div>
+          </div> -->
+
+          <br>
+
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Apply filters
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+ </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <p><strong>1 customer record</strong></p>
+        
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+ <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper" style="padding-bottom: 0px;">
+    <div class="govuk-form-group">
+    <h2 class="govuk-summary-card__title">
+       James Paul Smith (DEA)
+    </h2>
+    </div>
+</div>
+    
+  <div class="govuk-summary-card__content">
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          NINO
+        </dt>
+        <dd class="govuk-summary-list__value">
+          AB000017A
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Customer address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          527 Mill Lane, Southampton, GU6 3ZH
+        </dd>
+        
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Customer account number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          812500021
+        </dd>
+      </div>
+
+        <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Employer
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+          <li>
+            Top Tesco Stores
+          </li>
+          <li>
+            7947 Stanley Road, Inverness, IV44 7MR
+          </li>
+          <li>
+            Tel: 02079 460974
+          </li>
+        </ul>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Staff reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          161784903
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Previous employer
+        </dt>
+          <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+          <li>
+           Stanley LTD
+          </li>
+          <li>
+            73 The Avenue, Darlington, DL26 9QO
+          </li>
+        </ul>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Previous staff reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          98428392
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Customer account balance
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £4000.00
+        </dd>
+        
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Debt account information
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li>23805725 £222.78 (Adult Disability)</li>
+            <li>15353758 £1800.00 (Winter Fuel Payments)</li>
+            <li>24343444 £1978.35 (Carer)</li>
+        </ul>
+        </dd>
+        
+      </div>
+    
+</div>
+</div>
+
+</div>
+
+  </div>
+
+{% endblock %}
