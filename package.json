@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "@dwp/dwp-frontend": "4.1.0",
-    "@govuk-prototype-kit/common-templates": "3.0.0",
-    "@ministryofjustice/frontend": "^9.0.0",
+    "@govuk-prototype-kit/common-templates": "3.0.1",
+    "@ministryofjustice/frontend": "11.1.0",
     "@x-govuk/govuk-prototype-components": "^6.0.0",
     "body-parser": "2.3.0",
     "express": "5.2.1",
-    "govuk-frontend": "^6.2.0",
-    "govuk-prototype-kit": "13.20.2",
+    "govuk-frontend": "6.5.1",
+    "govuk-prototype-kit": "13.20.5",
     "immutable": "^5.1.6",
     "moment": "^2.30.1"
   },

@@ -1,33 +1,5 @@
+This prototype is for the Suspense Investigation Service (SIS).
 
-Use this template to create new prototypes in DWP. This template is updated with every major version release of the GOVUK prototype kit. 
+When payments can’t be automatically allocated to a customer account these are allocated by agents. SIS helps agents in the Suspense Investigation Team (SIT) identify the correct account so payments can be allocated (or refunded, as appropriate).
 
-Best practice:<br>
-<br>
-Before making any changes to your code, open your prototype folder in terminal and Run: <br>npm audit <br>
-Use ther information provided in terminal to fix any vulnerabilities before pushing your changes<br>
-Keep package-lock.json under version control<br>
-Do not blindly update packages without review<br>
-Never connect to internal APIs or production systems<br>
-Never store or process real user data<br>
-Remove old or unused prototypes promptly<br>
-Document the purpose and owner of each prototype clearly<br>
-Avoid turning prototypes into live services<br>
-Do not allow open write access to external collaborators<br>
-<br>
-Support
-
-If you've got a question, idea or suggestion about the GOVUK protoype kit, get in touch with the GOV.UK Prototype team.
-
-The GOV.UK Prototype team provides support to people who use the Prototype Kit and work in government.
-
-We cannot give general advice to the public. We do not have access to information about you held by government departments.
-
-For other enquiries, use the contact form on GOV.UK.
-
-Slack
-
-Use the #govuk-prototype-kit channel on cross-government Slack.
-
-Email
-
-Email the GOV.UK Prototype team at govuk-prototype-kit-support@digital.cabinet-office.gov.uk.
+The prototype is owned and maintained by the Repay & SIS Team.
